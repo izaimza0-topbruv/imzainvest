@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | IMZA Invest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">📈</span>
+                <span class="logo-text">IMZA<span class="logo-accent">INVEST</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="tools/">Money Lab</a>
+                <a href="resources/">Resources</a>
+                <a href="blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="error-page">
+        <div class="container">
+            <div class="error-content">
+                <span class="error-code">404</span>
+                <h1>Oops! This page invested elsewhere 💸</h1>
+                <p>The page you're looking for doesn't exist or has been moved.</p>
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary btn-lg">Go Home</a>
+                    <a href="tools/" class="btn btn-outline btn-lg">Try Money Lab</a>
+                </div>
+                <div class="error-suggestions">
+                    <h3>Popular Pages</h3>
+                    <ul>
+                        <li><a href="blog/best-investment-apps-uk-teens-2026.html">Best Investment Apps for UK Teens</a></li>
+                        <li><a href="tools/#compound-interest">Compound Interest Calculator</a></li>
+                        <li><a href="resources/">Resources We Recommend</a></li>
+                        <li><a href="/#journey">Our £1k to £60k Journey</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .error-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .error-content {
+            max-width: 600px;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+        .error-page h1 {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+        .error-page p {
+            font-size: 1.125rem;
+            color: #6B7280;
+            margin-bottom: 2rem;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .error-suggestions {
+            background: #F3F4F6;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: left;
+        }
+        .error-suggestions h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .error-suggestions li {
+            padding: 0.5rem 0;
+        }
+        .error-suggestions a {
+            color: #10B981;
+            font-weight: 500;
+        }
+        .error-suggestions a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code { font-size: 5rem; }
+            .error-page h1 { font-size: 1.5rem; }
+            .error-actions { flex-direction: column; }
+        }
+    </style>
+</body>
+</html>

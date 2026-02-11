@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; }
+.og-card { width: 1200px; height: 630px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.og-card .bg { position: absolute; inset: 0; }
+.og-card .content { position: relative; z-index: 1; text-align: center; padding: 60px; max-width: 1000px; }
+.og-card .logo { font-size: 24px; font-weight: 800; color: rgba(255,255,255,0.9); margin-bottom: 30px; letter-spacing: 2px; }
+.og-card .logo span { color: #10B981; }
+.og-card h1 { font-size: 56px; font-weight: 800; color: white; line-height: 1.15; margin-bottom: 20px; }
+.og-card .subtitle { font-size: 24px; color: rgba(255,255,255,0.85); font-weight: 400; }
+.og-card .badge { display: inline-block; background: rgba(255,255,255,0.15); color: white; padding: 8px 20px; border-radius: 100px; font-size: 16px; font-weight: 600; margin-bottom: 30px; backdrop-filter: blur(10px); }
+.og-card .stats { display: flex; gap: 40px; justify-content: center; margin-top: 30px; }
+.og-card .stat-item { text-align: center; }
+.og-card .stat-value { font-size: 28px; font-weight: 700; color: white; }
+.og-card .stat-label { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+/* Gradient backgrounds */
+.grad-green { background: linear-gradient(135deg, #065F46 0%, #10B981 50%, #3B82F6 100%); }
+.grad-blue { background: linear-gradient(135deg, #1E3A5F 0%, #3B82F6 50%, #8B5CF6 100%); }
+.grad-purple { background: linear-gradient(135deg, #4C1D95 0%, #8B5CF6 50%, #EC4899 100%); }
+.grad-dark { background: linear-gradient(135deg, #111827 0%, #1F2937 50%, #374151 100%); }
+.grad-red { background: linear-gradient(135deg, #7F1D1D 0%, #DC2626 50%, #F97316 100%); }
+
+.page-break { page-break-after: always; margin-bottom: 40px; }
+</style></head>
+<body>
+
+<!-- 1. Main Site OG -->
+<div class="page-break" id="og-main">
+<div class="og-card grad-green">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">Real Journey · Real Money · Real Lessons</div>
+<h1>Zo's £1k to £60k Journey</h1>
+<p class="subtitle">A dad teaching his 15-year-old to invest. Every win. Every loss.</p>
+<div class="stats">
+<div class="stat-item"><div class="stat-value">£1,000</div><div class="stat-label">Starting</div></div>
+<div class="stat-item"><div class="stat-value">£60,000</div><div class="stat-label">Goal</div></div>
+<div class="stat-item"><div class="stat-value">3 Years</div><div class="stat-label">Timeline</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 2. Blog OG -->
+<div class="page-break" id="og-blog">
+<div class="og-card grad-blue">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">📚 Blog</div>
+<h1>Teen-Friendly Finance Guides</h1>
+<p class="subtitle">Junior ISAs, index funds, compound interest — explained for teens</p>
+</div>
+</div>
+</div>
+
+<!-- 3. Underwater Robots -->
+<div class="page-break" id="og-robots">
+<div class="og-card grad-dark">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">🎯 Investment Thesis</div>
+<h1>Why I'm Betting My Uni Fund on Underwater Robots</h1>
+<p class="subtitle">Kraken Robotics · Ghost Sharks · High Risk, High Reward</p>
+</div>
+</div>
+</div>
+
+<!-- 4. Index Funds OP -->
+<div class="page-break" id="og-index-funds">
+<div class="og-card grad-blue">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">📚 Lesson</div>
+<h1>Why Index Funds Are Actually OP</h1>
+<p class="subtitle">The sensible path from £1k to £60k+. Easy mode unlocked.</p>
+</div>
+</div>
+</div>
+
+<!-- 5. University Cost -->
+<div class="page-break" id="og-uni">
+<div class="og-card grad-purple">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">🎓 Guide</div>
+<h1>UK University in 2028: £60k-£80k</h1>
+<p class="subtitle">Tuition £9,535/year + living costs. The full breakdown.</p>
+</div>
+</div>
+</div>
+
+<!-- 6. Market Crash JISA -->
+<div class="page-break" id="og-crash">
+<div class="og-card grad-red">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">📉 Lesson</div>
+<h1>Is a Junior ISA Still Worth It When Markets Crash?</h1>
+<p class="subtitle">Spoiler: Yes. Here's the recovery data.</p>
+</div>
+</div>
+</div>
+
+<!-- 7. 15yr old savings -->
+<div class="page-break" id="og-savings">
+<div class="og-card grad-green">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">💷 Lesson</div>
+<h1>How Much Should a 15-Year-Old Have Saved?</h1>
+<p class="subtitle">UK benchmarks: £0-£6,000. No wrong answer — just start.</p>
+</div>
+</div>
+</div>
+
+<!-- 8. CTF vs JISA -->
+<div class="page-break" id="og-ctf">
+<div class="og-card grad-blue">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">⚖️ Comparison</div>
+<h1>Junior ISA vs Child Trust Fund</h1>
+<p class="subtitle">Which wins? (Spoiler: JISA, by a mile)</p>
+</div>
+</div>
+</div>
+
+<!-- 9. £100/month -->
+<div class="page-break" id="og-100">
+<div class="og-card grad-green">
+<div class="content">
+<div class="logo">📈 IMZA<span>INVEST</span></div>
+<div class="badge">💰 Lesson</div>
+<h1>Investing £100 a Month</h1>
+<p class="subtitle">£36k invested → £149,000 after 30 years. The numbers are mental.</p>
+</div>
+</div>
+</div>
+
+</body>
+</html>

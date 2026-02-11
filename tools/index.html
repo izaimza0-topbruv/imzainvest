@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Lab - Financial Calculators | IMZA - Zo's £1k to £60k Journey</title>
+    <meta name="description" content="Free financial calculators for teens and families. Compound interest, investment growth, savings goals, and more. See how your money can grow.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "IMZA Money Lab",
+        "description": "Free financial calculators for teens and families",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation (same as main site) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../" class="logo">
+                <span class="logo-icon">📈</span>
+                <span class="logo-text">IMZA<span class="logo-accent">INVEST</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="../#journey">Journey</a>
+                <a href="./" class="active">Money Lab</a>
+                <a href="../resources/">Resources</a>
+                <a href="../blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <h1>🧪 Money Lab</h1>
+            <p class="subtitle">Free financial calculators to see your money grow</p>
+            <p class="description">These are the same tools we use to track Zo's journey. Pick one and see what's possible.</p>
+        </div>
+    </section>
+
+    <!-- Calculator Grid -->
+    <section class="calculators-section">
+        <div class="container">
+            <div class="calculators-grid">
+                
+                <!-- CALCULATOR 1: Compound Interest -->
+                <div class="calculator-card" id="compound-interest">
+                    <div class="calc-header">
+                        <span class="calc-icon">💰</span>
+                        <h2>Compound Interest Calculator</h2>
+                        <p>See how your money grows over time with compound interest</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="ci-starting">Starting Amount (£)</label>
+                                <input type="number" id="ci-starting" value="1000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="ci-monthly">Monthly Investment (£)</label>
+                                <input type="number" id="ci-monthly" value="250" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="ci-years">Time Period (Years)</label>
+                                <input type="number" id="ci-years" value="10" min="1" max="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="ci-rate">Annual Return (%)</label>
+                                <input type="number" id="ci-rate" value="8" min="0" max="30" step="0.5">
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card">
+                                <span class="result-label">You Invest</span>
+                                <span class="result-value" id="ci-invested">£31,000</span>
+                            </div>
+                            <div class="result-card highlight">
+                                <span class="result-label">Final Value</span>
+                                <span class="result-value" id="ci-final">£47,845</span>
+                            </div>
+                            <div class="result-card success">
+                                <span class="result-label">Free Money (Growth)</span>
+                                <span class="result-value" id="ci-growth">£16,845</span>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-chart" id="ci-chart">
+                            <!-- Chart rendered by JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">💡 <strong>Key insight:</strong> Starting at 15 instead of 25 could make you <span id="ci-difference">£50,000+</span> richer.</p>
+                        <button class="btn btn-sm btn-outline" onclick="shareResult('compound')">Share This Result</button>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR 2: Savings Goal -->
+                <div class="calculator-card" id="savings-goal">
+                    <div class="calc-header">
+                        <span class="calc-icon">🎯</span>
+                        <h2>Savings Goal Calculator</h2>
+                        <p>How much do you need to save monthly to reach your goal?</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="sg-goal">Savings Goal (£)</label>
+                                <input type="number" id="sg-goal" value="60000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="sg-starting">Starting Amount (£)</label>
+                                <input type="number" id="sg-starting" value="1000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="sg-years">Time Period (Years)</label>
+                                <input type="number" id="sg-years" value="3" min="1" max="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="sg-rate">Expected Return (%)</label>
+                                <input type="number" id="sg-rate" value="8" min="0" max="30" step="0.5">
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card highlight">
+                                <span class="result-label">Monthly Savings Needed</span>
+                                <span class="result-value" id="sg-monthly">£1,423</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">Total You'll Invest</span>
+                                <span class="result-value" id="sg-invested">£52,228</span>
+                            </div>
+                            <div class="result-card success">
+                                <span class="result-label">Growth Does The Rest</span>
+                                <span class="result-value" id="sg-growth">£7,772</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">💡 <strong>Good news:</strong> With compound interest, you only need to save <span id="sg-percent">87%</span> of your goal.</p>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR 3: Time to Million -->
+                <div class="calculator-card" id="million-calculator">
+                    <div class="calc-header">
+                        <span class="calc-icon">🚀</span>
+                        <h2>Time to £1 Million</h2>
+                        <p>How long until you're a millionaire?</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="tm-starting">Starting Amount (£)</label>
+                                <input type="number" id="tm-starting" value="1000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="tm-monthly">Monthly Investment (£)</label>
+                                <input type="number" id="tm-monthly" value="500" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="tm-rate">Annual Return (%)</label>
+                                <input type="number" id="tm-rate" value="8" min="0" max="30" step="0.5">
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card highlight">
+                                <span class="result-label">Years to £1 Million</span>
+                                <span class="result-value" id="tm-years">29</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">Your Age at £1M</span>
+                                <span class="result-value" id="tm-age">44</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">Total Invested</span>
+                                <span class="result-value" id="tm-invested">£175,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">💡 <strong>Insane:</strong> You'll only invest £175k, but compound interest adds <span id="tm-free">£825,000</span> for free.</p>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR 4: Cost of Waiting -->
+                <div class="calculator-card" id="cost-of-waiting">
+                    <div class="calc-header">
+                        <span class="calc-icon">⏰</span>
+                        <h2>Cost of Waiting Calculator</h2>
+                        <p>What does procrastination really cost you?</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="cw-monthly">Monthly Investment (£)</label>
+                                <input type="number" id="cw-monthly" value="250" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="cw-start-age">Start Age</label>
+                                <input type="number" id="cw-start-age" value="15" min="0" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="cw-end-age">End Age</label>
+                                <input type="number" id="cw-end-age" value="65" min="0" max="100">
+                            </div>
+                            <div class="input-group">
+                                <label for="cw-rate">Annual Return (%)</label>
+                                <input type="number" id="cw-rate" value="8" min="0" max="30" step="0.5">
+                            </div>
+                        </div>
+                        
+                        <div class="calc-comparison">
+                            <div class="compare-card start-now">
+                                <h3>Start at <span id="cw-age1">15</span></h3>
+                                <div class="compare-value" id="cw-result1">£2,095,368</div>
+                                <div class="compare-detail">Invested: <span id="cw-invested1">£150,000</span></div>
+                            </div>
+                            <div class="compare-card wait">
+                                <h3>Start at <span id="cw-age2">25</span></h3>
+                                <div class="compare-value" id="cw-result2">£932,741</div>
+                                <div class="compare-detail">Invested: <span id="cw-invested2">£120,000</span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card danger">
+                                <span class="result-label">Cost of Waiting 10 Years</span>
+                                <span class="result-value" id="cw-cost">£1,162,627</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">⚠️ <strong>Brutal truth:</strong> Waiting 10 years costs you over £1M, but you only saved £30k less.</p>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR 5: Emergency Fund -->
+                <div class="calculator-card" id="emergency-fund">
+                    <div class="calc-header">
+                        <span class="calc-icon">🛡️</span>
+                        <h2>Emergency Fund Calculator</h2>
+                        <p>How much should you have saved for emergencies?</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="ef-monthly">Monthly Expenses (£)</label>
+                                <input type="number" id="ef-monthly" value="2000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="ef-months">Months of Coverage</label>
+                                <input type="range" id="ef-months" value="6" min="3" max="12">
+                                <span class="range-value" id="ef-months-display">6 months</span>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card highlight">
+                                <span class="result-label">Emergency Fund Target</span>
+                                <span class="result-value" id="ef-target">£12,000</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">If You Save £250/month</span>
+                                <span class="result-value" id="ef-time">48 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">💡 <strong>Rule of thumb:</strong> 3-6 months of expenses. More if your income is irregular.</p>
+                    </div>
+                </div>
+
+                <!-- CALCULATOR 6: ISA Allowance -->
+                <div class="calculator-card" id="isa-calculator">
+                    <div class="calc-header">
+                        <span class="calc-icon">🇬🇧</span>
+                        <h2>ISA Tax Savings Calculator</h2>
+                        <p>How much tax could you save with an ISA?</p>
+                    </div>
+                    
+                    <div class="calc-body">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="isa-amount">Amount in ISA (£)</label>
+                                <input type="number" id="isa-amount" value="20000" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label for="isa-return">Expected Return (%)</label>
+                                <input type="number" id="isa-return" value="8" min="0" max="30" step="0.5">
+                            </div>
+                            <div class="input-group">
+                                <label for="isa-years">Years Invested</label>
+                                <input type="number" id="isa-years" value="10" min="1" max="50">
+                            </div>
+                            <div class="input-group">
+                                <label for="isa-tax">Your Tax Rate (%)</label>
+                                <select id="isa-tax">
+                                    <option value="20">20% (Basic)</option>
+                                    <option value="40" selected>40% (Higher)</option>
+                                    <option value="45">45% (Additional)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <div class="result-card">
+                                <span class="result-label">ISA Value After 10 Years</span>
+                                <span class="result-value" id="isa-value">£43,178</span>
+                            </div>
+                            <div class="result-card success">
+                                <span class="result-label">Tax Saved (vs Taxable)</span>
+                                <span class="result-value" id="isa-saved">£3,489</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">Growth in ISA</span>
+                                <span class="result-value" id="isa-growth">£23,178</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-footer">
+                        <p class="calc-tip">💡 <strong>2025/26 ISA Allowance:</strong> £20,000/year. Use it or lose it.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content">
+        <div class="container">
+            <h2>Why Financial Calculators Matter</h2>
+            <p>Understanding compound interest is the single most important financial lesson for young people. Our calculators show you exactly how money grows over time - no complex jargon, just real numbers.</p>
+            
+            <h3>What is Compound Interest?</h3>
+            <p>Compound interest is when your money earns interest, and then that interest earns interest too. It's like a snowball rolling down a hill - it starts small but grows bigger and faster as it goes.</p>
+            
+            <h3>Why Start Investing Young?</h3>
+            <p>Time is your biggest advantage. A 15-year-old who invests £250/month until 65 could have over £2 million. Wait until 25? That drops to under £1 million. <strong>The 10-year wait costs you over £1 million.</strong></p>
+            
+            <h3>UK Investment Basics</h3>
+            <p>In the UK, you can invest tax-free using an ISA (Individual Savings Account). The 2025/26 allowance is £20,000. For teens, a Junior ISA allows £9,000/year. All growth is completely tax-free.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="tools-cta">
+        <div class="container">
+            <h2>See How We're Using These Numbers</h2>
+            <p>Zo's real portfolio uses these same calculations. Track our journey from £1,000 to £60,000.</p>
+            <a href="../" class="btn btn-primary btn-lg">Follow The Journey</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📈</span>
+                    <span class="logo-text">IMZA<span class="logo-accent">INVEST</span></span>
+                    <p>Zo's £1k to £60k Journey</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Content</h4>
+                        <a href="../">Home</a>
+                        <a href="./">Money Lab</a>
+                        <a href="../#learn">Learn</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Calculators</h4>
+                        <a href="#compound-interest">Compound Interest</a>
+                        <a href="#savings-goal">Savings Goal</a>
+                        <a href="#cost-of-waiting">Cost of Waiting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer"><strong>Disclaimer:</strong> These calculators are for educational purposes only. This is not financial advice. All investing involves risk.</p>
+                <p class="copyright">© 2026 IMZA INVEST. Made with ❤️ by a dad and daughter.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tools.js"></script>
+</body>
+</html>
