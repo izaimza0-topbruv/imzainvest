@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator UK — Free Tool | imzainvest</title>
+    <meta name="description" content="Free compound interest calculator for UK investors. See how your money grows with monthly investments. Calculate investment returns, time to goals, and wealth projections.">
+    <meta name="keywords" content="compound interest calculator, investment calculator UK, growth calculator, savings calculator, wealth projection">
+    <meta name="author" content="IMZA Invest">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imzainvest.com/tools/compound-interest-calculator/">
+    <meta property="og:title" content="Compound Interest Calculator UK — Free Tool">
+    <meta property="og:description" content="See how your money grows with compound interest. Free calculator with projections and insights.">
+    <meta property="og:image" content="https://imzainvest.com/images/og-image.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://imzainvest.com/tools/compound-interest-calculator/">
+    <meta name="twitter:title" content="Compound Interest Calculator UK — Free Tool">
+    <meta name="twitter:description" content="See how your money grows with compound interest.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://imzainvest.com/tools/compound-interest-calculator/">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Compound Interest Calculator UK",
+        "description": "Free compound interest calculator for UK investors. Calculate investment growth with compound interest.",
+        "url": "https://imzainvest.com/tools/compound-interest-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is compound interest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compound interest is when you earn interest on both your initial investment and the interest that has accumulated. It's like a snowball effect where your money grows faster over time because each year you're earning returns on a larger amount."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the compound interest calculator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your starting amount, monthly investment, time period, and expected annual return. The calculator will show your final value, total invested amount, and how much growth (compound interest) earned the money for you."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What annual return should I use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Historical UK stock market returns average around 7-8% annually over long periods. Bond returns are typically 2-4%. Use conservative estimates (5-7%) for realistic projections. Past performance doesn't guarantee future results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does starting early matter so much?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Time is the most powerful force in compound interest. A 15-year-old investing £250/month for 10 years often ends up with more at 65 than someone who starts at 25 and invests for 40 years. The extra time at the beginning compounds exponentially."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this calculator accurate?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator is for educational purposes and assumes consistent returns and regular monthly contributions. Real investments fluctuate, inflation changes value, and taxes may apply. Always do your own research and consider professional advice."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../" class="logo">
+                <span class="logo-icon">📈</span>
+                <span class="logo-text">IMZA<span class="logo-accent">INVEST</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="../../">Home</a>
+                <a href="../../#journey">Journey</a>
+                <a href="../" class="active">Money Lab</a>
+                <a href="../../resources/">Resources</a>
+                <a href="../../blog/">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <h1>💰 Compound Interest Calculator UK</h1>
+            <p class="subtitle">See how your money grows exponentially over time</p>
+            <p class="description">The most powerful force in investing. Enter your numbers and watch the magic happen.</p>
+        </div>
+    </section>
+
+    <!-- Main Calculator -->
+    <section class="calculators-section">
+        <div class="container">
+            <!-- Interactive Calculator -->
+            <div class="calculator-card" id="compound-interest" style="max-width: 100%; margin: 0 auto;">
+                <div class="calc-header">
+                    <span class="calc-icon">💰</span>
+                    <h2>Compound Interest Calculator</h2>
+                    <p>See how your money grows over time with compound interest</p>
+                </div>
+                
+                <div class="calc-body">
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <label for="ci-starting">Starting Amount (£)</label>
+                            <input type="number" id="ci-starting" value="1000" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="ci-monthly">Monthly Investment (£)</label>
+                            <input type="number" id="ci-monthly" value="250" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="ci-years">Time Period (Years)</label>
+                            <input type="number" id="ci-years" value="10" min="1" max="50">
+                        </div>
+                        <div class="input-group">
+                            <label for="ci-rate">Annual Return (%)</label>
+                            <input type="number" id="ci-rate" value="8" min="0" max="30" step="0.5">
+                        </div>
+                    </div>
+                    
+                    <div class="calc-results">
+                        <div class="result-card">
+                            <span class="result-label">You Invest</span>
+                            <span class="result-value" id="ci-invested">£31,000</span>
+                        </div>
+                        <div class="result-card highlight">
+                            <span class="result-label">Final Value</span>
+                            <span class="result-value" id="ci-final">£47,845</span>
+                        </div>
+                        <div class="result-card success">
+                            <span class="result-label">Free Money (Growth)</span>
+                            <span class="result-value" id="ci-growth">£16,845</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-chart" id="ci-chart">
+                        <!-- Chart rendered by JS -->
+                    </div>
+                </div>
+                
+                <div class="calc-footer">
+                    <p class="calc-tip">💡 <strong>Key insight:</strong> Starting at 15 instead of 25 could make you <span id="ci-difference">£50,000+</span> richer.</p>
+                    <button class="btn btn-sm btn-outline" onclick="shareResult('compound')">Share This Result</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="content-section">
+        <div class="container">
+            <article class="educational-content">
+                <h2>Understanding Compound Interest</h2>
+                
+                <p>
+                    Compound interest is often called the "eighth wonder of the world" by investors, and for good reason. It's the single most powerful force for building wealth over time, and it's available to anyone with a bit of money and patience.
+                </p>
+
+                <h3>How It Works: The Simple Version</h3>
+                <p>
+                    Imagine you invest £1,000 at an average return of 7% per year.
+                </p>
+                <ul>
+                    <li><strong>Year 1:</strong> You earn 7% on £1,000 = £70, leaving you with £1,070</li>
+                    <li><strong>Year 2:</strong> You earn 7% on £1,070 = £75, leaving you with £1,145</li>
+                    <li><strong>Year 3:</strong> You earn 7% on £1,145 = £80, leaving you with £1,225</li>
+                </ul>
+                <p>
+                    Notice something? Each year, you earn slightly more interest even though your return rate stays the same. That's compound interest — you're earning interest on your interest.
+                </p>
+
+                <h3>Why Time Matters More Than Money</h3>
+                <p>
+                    Here's where it gets really interesting. Consider two investors:
+                </p>
+                <ul>
+                    <li><strong>Sam starts at 15:</strong> Invests £250/month for 10 years, then stops. Total invested: £30,000</li>
+                    <li><strong>Alex starts at 25:</strong> Invests £250/month for 40 years (until 65). Total invested: £120,000</li>
+                </ul>
+                <p>
+                    At age 65, assuming 7% annual returns, Sam likely has more than Alex. Why? Because Sam's £30,000 had 50 years to compound, while Alex's £120,000 had only 40 years. Time compounds exponentially.
+                </p>
+
+                <h3>The Power of Monthly Contributions</h3>
+                <p>
+                    You don't need a lump sum to benefit from compound interest. Regular monthly contributions make a huge difference. Even £100-200 per month invested consistently over 20-30 years can turn into £100,000+ with compound interest doing much of the heavy lifting.
+                </p>
+
+                <h3>Using This Calculator</h3>
+                <p>
+                    The calculator above lets you experiment with different scenarios:
+                </p>
+                <ul>
+                    <li>Try different starting amounts</li>
+                    <li>Adjust monthly contributions</li>
+                    <li>Change time periods to see long-term impact</li>
+                    <li>Experiment with different return rates (realistic: 5-8% for stock market investments)</li>
+                </ul>
+                <p>
+                    Try this: Set it to start at 15, invest £250/month for 50 years at 7%. Then change it to start at 25. The difference is eye-opening.
+                </p>
+
+                <h3>Important Reminders</h3>
+                <ul>
+                    <li>This calculator is for <strong>educational purposes</strong> only</li>
+                    <li>Past returns don't guarantee future results</li>
+                    <li>Actual returns vary year to year (markets go up and down)</li>
+                    <li>Inflation and taxes may affect your real returns</li>
+                    <li>Never invest money you'll need in the next 5 years</li>
+                </ul>
+
+                <h3>Next Steps</h3>
+                <p>
+                    Now that you understand compound interest, the next question is: where do you invest to get those returns? Check out our other resources:
+                </p>
+                <ul>
+                    <li><a href="../../blog/what-is-compound-interest.html">Deep dive: What is Compound Interest?</a></li>
+                    <li><a href="../../blog/junior-isa-guide.html">Junior ISA Guide 2026</a> — The tax-free way to invest</li>
+                    <li><a href="../../blog/best-investment-apps-uk-teens-2026.html">Best Investment Apps for UK Teens 2026</a></li>
+                    <li><a href="../../blog/why-index-funds-are-actually-op.html">Why Index Funds Are OP</a> — The easiest way to get consistent returns</li>
+                    <li><a href="../">Back to Money Lab</a> — Explore all our calculators</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What's a realistic annual return?</h3>
+                    <p>UK stock market historical average: 7-8%. Bonds: 2-4%. Mixed portfolio: 5-6%. Use 7% for conservative estimates, but remember this varies year to year.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Should I invest in stocks or bonds?</h3>
+                    <p>For teens with 30+ years until retirement, stocks typically offer better returns despite higher volatility. Bonds are safer but grow slower. Many use a mix.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do taxes affect these calculations?</h3>
+                    <p>In a Junior ISA or regular ISA, UK taxes don't apply — it's tax-free growth. Outside an ISA, dividend tax and capital gains tax may apply. This calculator ignores taxes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if markets crash?</h3>
+                    <p>Markets crash occasionally, but historically recover within 2-5 years. Over 20+ years, crashes barely matter. Keep investing through downturns.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I actually achieve these numbers?</h3>
+                    <p>Historically, yes. But it requires consistent investing and staying invested. Most people abandon their strategy when markets drop. Discipline beats everything.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this better than keeping money in a savings account?</h3>
+                    <p>UK savings accounts currently pay 4-5% (2025). Stock market historically returns 7-8%. Over 20 years, the difference is massive: stock market wealth is often 2-3x higher.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-tools">
+        <div class="container">
+            <h2>Explore Other Calculators</h2>
+            <div class="tools-grid">
+                <a href="../" class="tool-card">
+                    <span class="tool-icon">🎯</span>
+                    <h3>Money Lab</h3>
+                    <p>View all financial calculators and tools</p>
+                </a>
+                <a href="../../blog/investing-100-a-month-uk.html" class="tool-card">
+                    <span class="tool-icon">💰</span>
+                    <h3>Investing £100/Month</h3>
+                    <p>Real strategy for consistent investing</p>
+                </a>
+                <a href="../../blog/junior-isa-guide.html" class="tool-card">
+                    <span class="tool-icon">📊</span>
+                    <h3>Junior ISA Guide</h3>
+                    <p>Tax-free investing for UK teens</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">📈</span>
+                    <span class="logo-text">IMZA<span class="logo-accent">INVEST</span></span>
+                    <p>Zo's £1k to £60k Journey</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Learn</h4>
+                        <a href="../../">Home</a>
+                        <a href="../../#journey">Journey</a>
+                        <a href="../">Money Lab</a>
+                        <a href="../../resources/">Resources</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="../../#about">About</a>
+                        <a href="../../#newsletter">Newsletter</a>
+                        <a href="https://tiktok.com/@ImzaInvest" target="_blank" rel="noopener">TikTok</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="../../resources/affiliate-disclosure.html">Affiliate Disclosure</a>
+                        <a href="../../resources/privacy.html">Privacy Policy</a>
+                        <a href="../../resources/terms.html">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="disclaimer">
+                    <strong>Disclaimer:</strong> This calculator is for educational purposes. Not financial advice. Do your own research.
+                </p>
+                <p class="copyright">
+                    © 2026 IMZA INVEST. Made with ❤️ by a dad and daughter.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html>
