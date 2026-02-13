@@ -263,48 +263,24 @@
                 <div class="portfolio-grid">
                 <div class="portfolio-holdings">
                     <h3>Current Holdings</h3>
-                    <div class="holding">
-                        <div class="holding-info">
-                            <span class="holding-name">Nebius Group NV</span>
-                            <span class="holding-ticker">NBIS</span>
-                        </div>
-                        <div class="holding-allocation">
-                            <div class="allocation-bar" style="width: 45%;"></div>
-                            <span class="allocation-percent">45%</span>
-                        </div>
-                        <div class="holding-value">£2,476.38</div>
+                    <div id="portfolio-holdings-live">
+                        <!-- Populated by JS from prices.json -->
+                        <noscript>
+                            <div class="holding">
+                                <div class="holding-info"><span class="holding-name">Nebius Group NV</span><span class="holding-ticker">NBIS</span></div>
+                                <div class="holding-value">£2,476.38</div>
+                            </div>
+                            <div class="holding">
+                                <div class="holding-info"><span class="holding-name">Kraken Robotics Inc</span><span class="holding-ticker">PNG</span></div>
+                                <div class="holding-value">£1,997.94</div>
+                            </div>
+                            <div class="holding">
+                                <div class="holding-info"><span class="holding-name">KR1 plc</span><span class="holding-ticker">KR1</span></div>
+                                <div class="holding-value">£1,000.00</div>
+                            </div>
+                        </noscript>
                     </div>
-                    <div class="holding">
-                        <div class="holding-info">
-                            <span class="holding-name">Kraken Robotics Inc</span>
-                            <span class="holding-ticker">PNG</span>
-                        </div>
-                        <div class="holding-allocation">
-                            <div class="allocation-bar" style="width: 37%;"></div>
-                            <span class="allocation-percent">37%</span>
-                        </div>
-                        <div class="holding-value">£1,997.94</div>
-                    </div>
-                    <div class="holding">
-                        <div class="holding-info">
-                            <span class="holding-name">KR1 plc</span>
-                            <span class="holding-ticker">KR1</span>
-                        </div>
-                        <div class="holding-allocation">
-                            <div class="allocation-bar" style="width: 18%;"></div>
-                            <span class="allocation-percent">18%</span>
-                        </div>
-                        <div class="holding-value">£1,000.00</div>
-                    </div>
-                    <div class="holding cash-row">
-                        <div class="holding-info">
-                            <span class="holding-name">Total Invested</span>
-                            <span class="holding-ticker">—</span>
-                        </div>
-                        <div class="holding-allocation">
-                            <span class="allocation-percent tiny">£5,474.32</span>
-                        </div>
-                    </div>
+                    <p id="portfolio-updated" style="font-size:0.75rem;color:#888;margin-top:0.5rem;"></p>
                 </div>
 
                 <div class="portfolio-strategy">
@@ -682,5 +658,54 @@
     </footer>
 
     <script defer src="script.js"></script>
+<script>
+(function(){
+  fetch('/prices.json').then(r=>r.json()).then(data=>{
+    const el=document.getElementById('portfolio-holdings-live');
+    if(!el||!data.holdings)return;
+    let html='';
+    const total=data.totals;
+    data.holdings.forEach(h=>{
+      const pct=((h.valueGBP/total.value)*100).toFixed(0);
+      const plClass=h.plGBP>=0?'profit':'loss';
+      const plSign=h.plGBP>=0?'+':'';
+      html+=`<div class="holding">
+        <div class="holding-info">
+          <span class="holding-name">${h.name}</span>
+          <span class="holding-ticker">${h.ticker}</span>
+        </div>
+        <div class="holding-allocation">
+          <div class="allocation-bar" style="width:${pct}%"></div>
+          <span class="allocation-percent">${pct}%</span>
+        </div>
+        <div class="holding-value">
+          £${h.valueGBP.toLocaleString('en-GB',{minimumFractionDigits:2})}
+          <span class="pl-badge ${plClass}">${plSign}£${Math.abs(h.plGBP).toFixed(0)} (${plSign}${h.plPct.toFixed(1)}%)</span>
+        </div>
+      </div>`;
+    });
+    const tPlClass=total.plGBP>=0?'profit':'loss';
+    const tSign=total.plGBP>=0?'+':'';
+    html+=`<div class="holding cash-row">
+      <div class="holding-info">
+        <span class="holding-name">Total Portfolio</span>
+        <span class="holding-ticker">—</span>
+      </div>
+      <div class="holding-allocation">
+        <span class="allocation-percent tiny">£${total.value.toLocaleString('en-GB',{minimumFractionDigits:2})}</span>
+      </div>
+      <div class="holding-value">
+        <span class="pl-badge ${tPlClass}">${tSign}£${Math.abs(total.plGBP).toFixed(0)} (${tSign}${total.plPct.toFixed(1)}%)</span>
+      </div>
+    </div>`;
+    el.innerHTML=html;
+    const upd=document.getElementById('portfolio-updated');
+    if(upd){
+      const d=new Date(data.updated);
+      upd.textContent='Prices updated: '+d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
+    }
+  }).catch(()=>{});
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+{
+  "updated": "2026-02-13T14:05:00Z",
+  "fx": {
+    "GBPUSD": 1.3635,
+    "GBPCAD": 1.8552
+  },
+  "holdings": [
+    {
+      "name": "Nebius Group NV",
+      "ticker": "NBIS",
+      "exchange": "NASDAQ",
+      "units": 34,
+      "costGBP": 2476.38,
+      "priceRaw": 89.73,
+      "currency": "USD",
+      "priceGBP": 65.81,
+      "valueGBP": 2237.49,
+      "plGBP": -238.89,
+      "plPct": -9.65
+    },
+    {
+      "name": "Kraken Robotics Inc",
+      "ticker": "PNG",
+      "exchange": "TSX-V",
+      "units": 549,
+      "costGBP": 1997.94,
+      "priceRaw": 7.22,
+      "currency": "CAD",
+      "priceGBP": 3.89,
+      "valueGBP": 2136.58,
+      "plGBP": 138.64,
+      "plPct": 6.94
+    },
+    {
+      "name": "KR1 plc",
+      "ticker": "KR1",
+      "exchange": "AQSE",
+      "units": 4141,
+      "costGBP": 1000.00,
+      "priceRaw": 17.68,
+      "currency": "GBp",
+      "priceGBP": 0.1768,
+      "valueGBP": 732.13,
+      "plGBP": -267.87,
+      "plPct": -26.79
+    }
+  ],
+  "totals": {
+    "invested": 5474.32,
+    "value": 5106.20,
+    "plGBP": -368.12,
+    "plPct": -6.72
+  }
+}
