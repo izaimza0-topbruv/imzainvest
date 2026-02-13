@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Batch Generator - IMZA Invest</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #10b981 0%, #0891b2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            min-height: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .status.success {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .status.error {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
+        .status.loading {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .og-preview {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .og-preview canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #f0f0f0;
+        }
+        
+        .og-preview-info {
+            padding: 12px;
+            background: white;
+        }
+        
+        .og-preview-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            word-break: break-word;
+        }
+        
+        .og-preview-actions {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .og-preview-actions button {
+            flex: 1;
+            padding: 6px 10px;
+            font-size: 11px;
+            margin: 0;
+        }
+        
+        #canvas-container {
+            display: none;
+        }
+        
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 OG Image Batch Generator</h1>
+        <p class="subtitle">Generate all missing OG images for IMZA Invest blog posts</p>
+        
+        <div class="controls">
+            <button onclick="generateAll()">🚀 Generate All Images</button>
+            <button onclick="downloadAll()">⬇️ Download All PNGs</button>
+        </div>
+        
+        <div class="status" id="status"></div>
+        
+        <div id="canvas-container"></div>
+        <div class="gallery" id="gallery"></div>
+    </div>
+
+    <script>
+        // Article data: title, slug, emoji
+        const articles = [
+            {
+                title: "Best Investment Apps for UK Teens 2026",
+                slug: "best-investment-apps-uk-teens-2026",
+                emoji: "📱"
+            },
+            {
+                title: "Index Funds vs ETFs: What's the Difference?",
+                slug: "index-funds-vs-etfs",
+                emoji: "📊"
+            },
+            {
+                title: "Junior ISA Guide 2026: Everything You Need to Know",
+                slug: "junior-isa-guide",
+                emoji: "🎓"
+            },
+            {
+                title: "What is Compound Interest? The Magic That Grows Your Money",
+                slug: "what-is-compound-interest",
+                emoji: "💰"
+            },
+            {
+                title: "What Happens When You Buy a Stock?",
+                slug: "what-happens-when-you-buy-a-stock",
+                emoji: "📈"
+            },
+            {
+                title: "My First Month Investing: What I Learned",
+                slug: "my-first-month-investing-what-i-learned",
+                emoji: "🌱"
+            },
+            {
+                title: "How Much Should a 15-Year-Old Have Saved?",
+                slug: "how-much-should-15-year-old-saved",
+                emoji: "🎯"
+            }
+        ];
+
+        // Store generated images
+        const generatedImages = new Map();
+
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+
+        function createOGImage(title, emoji) {
+            // Create canvas at 1200x630 resolution
+            const canvas = document.createElement('canvas');
+            canvas.width = 1200;
+            canvas.height = 630;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background (green to blue)
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, '#10b981');    // Emerald green
+            gradient.addColorStop(0.5, '#06b6d4');  // Cyan
+            gradient.addColorStop(1, '#0891b2');    // Teal blue
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+            
+            // Add subtle pattern/texture
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+            for (let i = 0; i < 1200; i += 60) {
+                ctx.fillRect(i, 0, 30, 630);
+            }
+            
+            // Draw emoji (large, upper area)
+            ctx.font = 'bold 140px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(emoji, 600, 150);
+            
+            // Draw title (centered, wrapped if necessary)
+            ctx.font = 'bold 60px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.lineWidth = 2;
+            
+            // Word wrap for title
+            const maxWidth = 1000;
+            const words = title.split(' ');
+            let lines = [];
+            let currentLine = '';
+            
+            for (let word of words) {
+                const testLine = currentLine ? currentLine + ' ' + word : word;
+                const metrics = ctx.measureText(testLine);
+                
+                if (metrics.width > maxWidth && currentLine) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = testLine;
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            
+            // Calculate starting Y for vertical centering
+            const lineHeight = 75;
+            const totalHeight = (lines.length - 1) * lineHeight;
+            const startY = 300 - (totalHeight / 2);
+            
+            // Draw each line
+            lines.forEach((line, index) => {
+                const y = startY + (index * lineHeight);
+                ctx.fillText(line, 600, y);
+            });
+            
+            // Draw branding at bottom
+            ctx.font = 'bold 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.textAlign = 'center';
+            ctx.fillText('IMZA INVEST', 600, 580);
+            
+            // Draw website URL
+            ctx.font = '24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+            ctx.fillText('imzainvest.com', 600, 615);
+            
+            return canvas;
+        }
+
+        function generateAll() {
+            updateStatus('🔨 Generating all OG images...', 'loading');
+            
+            try {
+                const gallery = document.getElementById('gallery');
+                gallery.innerHTML = '';
+                generatedImages.clear();
+                
+                articles.forEach(article => {
+                    const canvas = createOGImage(article.title, article.emoji);
+                    const imageName = `og-${article.slug}.png`;
+                    
+                    generatedImages.set(imageName, canvas);
+                    
+                    // Create preview
+                    const preview = document.createElement('div');
+                    preview.className = 'og-preview';
+                    
+                    const previewCanvas = canvas.cloneNode();
+                    previewCanvas.width = canvas.width;
+                    previewCanvas.height = canvas.height;
+                    const previewCtx = previewCanvas.getContext('2d');
+                    previewCtx.drawImage(canvas, 0, 0);
+                    
+                    preview.appendChild(previewCanvas);
+                    
+                    const info = document.createElement('div');
+                    info.className = 'og-preview-info';
+                    
+                    const title = document.createElement('div');
+                    title.className = 'og-preview-title';
+                    title.textContent = imageName;
+                    info.appendChild(title);
+                    
+                    const actions = document.createElement('div');
+                    actions.className = 'og-preview-actions';
+                    
+                    const downloadBtn = document.createElement('button');
+                    downloadBtn.textContent = 'Download';
+                    downloadBtn.onclick = () => downloadImage(imageName);
+                    actions.appendChild(downloadBtn);
+                    
+                    const copyBtn = document.createElement('button');
+                    copyBtn.textContent = 'Copy URL';
+                    copyBtn.onclick = () => {
+                        const url = `/images/${imageName}`;
+                        navigator.clipboard.writeText(url);
+                        updateStatus(`✅ Copied: ${url}`, 'success');
+                    };
+                    actions.appendChild(copyBtn);
+                    
+                    info.appendChild(actions);
+                    preview.appendChild(info);
+                    
+                    gallery.appendChild(preview);
+                });
+                
+                updateStatus(`✅ Generated ${generatedImages.size} OG images successfully!`, 'success');
+            } catch (error) {
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        }
+
+        function downloadImage(imageName) {
+            const canvas = generatedImages.get(imageName);
+            if (!canvas) {
+                updateStatus(`❌ Image ${imageName} not found`, 'error');
+                return;
+            }
+            
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = imageName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                updateStatus(`✅ Downloaded: ${imageName}`, 'success');
+            }, 'image/png');
+        }
+
+        function downloadAll() {
+            if (generatedImages.size === 0) {
+                updateStatus('⚠️ Generate images first!', 'error');
+                return;
+            }
+            
+            updateStatus('⬇️ Downloading all images...', 'loading');
+            
+            let downloaded = 0;
+            const total = generatedImages.size;
+            
+            generatedImages.forEach((canvas, imageName) => {
+                setTimeout(() => {
+                    downloadImage(imageName);
+                    downloaded++;
+                    
+                    if (downloaded === total) {
+                        updateStatus(`✅ Downloaded all ${total} images!`, 'success');
+                    }
+                }, 200 * downloaded);
+            });
+        }
+
+        // Auto-generate on load
+        window.addEventListener('load', () => {
+            generateAll();
+        });
+    </script>
+</body>
+</html>

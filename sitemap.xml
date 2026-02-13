@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
     <url>
         <loc>https://imzainvest.com/</loc>
-        <lastmod>2026-02-11</lastmod>
+        <lastmod>2026-02-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/</loc>
+        <lastmod>2026-02-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://imzainvest.com/tools/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://imzainvest.com/resources/</loc>
@@ -18,14 +25,74 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>https://imzainvest.com/blog/</loc>
-        <lastmod>2026-02-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
     
     <!-- Blog Posts -->
+    <url>
+        <loc>https://imzainvest.com/blog/best-investment-apps-uk-teens-2026.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/how-much-for-uk-university-2028.html</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/how-much-should-15-year-old-saved.html</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/index-funds-vs-etfs.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/investing-100-a-month-uk.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/is-junior-isa-worth-it-market-crash.html</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/junior-isa-guide.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/junior-isa-vs-child-trust-fund.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/my-first-month-investing-what-i-learned.html</loc>
+        <lastmod>2026-02-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/what-happens-when-you-buy-a-stock.html</loc>
+        <lastmod>2026-02-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/what-is-compound-interest.html</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <url>
         <loc>https://imzainvest.com/blog/why-im-betting-on-underwater-robots.html</loc>
         <lastmod>2025-12-01</lastmod>
@@ -38,62 +105,40 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    
+    <!-- Redirect/Link Pages -->
     <url>
-        <loc>https://imzainvest.com/blog/how-much-for-uk-university-2028.html</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imzainvest.com/blog/is-junior-isa-worth-it-market-crash.html</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imzainvest.com/blog/how-much-should-15-year-old-saved.html</loc>
-        <lastmod>2025-12-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imzainvest.com/blog/investing-100-a-month-uk.html</loc>
+        <loc>https://imzainvest.com/go/freetrade/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://imzainvest.com/blog/junior-isa-vs-child-trust-fund.html</loc>
+        <loc>https://imzainvest.com/go/psychology-money/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://imzainvest.com/blog/best-investment-apps-uk-teens-2026.html</loc>
+        <loc>https://imzainvest.com/go/rich-dad/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://imzainvest.com/blog/junior-isa-guide.html</loc>
+        <loc>https://imzainvest.com/go/trading212/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://imzainvest.com/blog/what-is-compound-interest.html</loc>
+        <loc>https://imzainvest.com/go/vanguard/</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://imzainvest.com/blog/index-funds-vs-etfs.html</loc>
-        <lastmod>2026-02-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.6</priority>
     </url>
     
-    <!-- Other Pages -->
+    <!-- Resource Pages -->
     <url>
         <loc>https://imzainvest.com/resources/affiliate-disclosure.html</loc>
         <lastmod>2026-02-11</lastmod>

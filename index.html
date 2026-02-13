@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junior ISA UK — Teen Investing For Beginners | IMZA</title>
-    <meta name="description" content="Learn investing for beginners with Zo's real £1k-£60k journey. Junior ISA guide, compound interest, index funds, and trading strategies for UK teens.">
+    <title>IMZA Invest | Zo's £1k to £60k Journey - A Dad Teaching His 15-Year-Old to Invest</title>
+    <meta name="description" content="Watch a 15-year-old girl learn to invest with her dad. Real journey. Real money. Real lessons. From £1,000 to £60,000 for university.">
     <meta name="keywords" content="teen investing UK, junior ISA, investing for beginners, compound interest, Trading 212, index funds UK">
     <meta name="author" content="IMZA Invest">
     
@@ -64,7 +64,9 @@
     
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Google Analytics 4 -->
+    
+    <!-- Google Analytics (GA4) - UNCOMMENT WHEN PROPERTY ID IS SET -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -72,6 +74,7 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
+    -->
 </head>
 <body>
     <!-- Announcement Bar -->
@@ -174,15 +177,15 @@
                 </div>
                 <div class="countdown-timer" id="countdown">
                     <div class="countdown-unit">
-                        <span class="countdown-value" id="years">2</span>
+                        <span class="countdown-value" id="countdown-years">2</span>
                         <span class="countdown-label">Years</span>
                     </div>
                     <div class="countdown-unit">
-                        <span class="countdown-value" id="months">9</span>
+                        <span class="countdown-value" id="countdown-months">9</span>
                         <span class="countdown-label">Months</span>
                     </div>
                     <div class="countdown-unit">
-                        <span class="countdown-value" id="days">15</span>
+                        <span class="countdown-value" id="countdown-days">15</span>
                         <span class="countdown-label">Days</span>
                     </div>
                 </div>
@@ -491,20 +494,20 @@
                 <div class="calculator-body">
                     <div class="calculator-inputs">
                         <div class="input-group">
-                            <label for="starting-amount">Starting Amount (£)</label>
-                            <input type="number" id="starting-amount" value="1000" min="0">
+                            <label for="calc-starting-amount">Starting Amount (£)</label>
+                            <input type="number" id="calc-starting-amount" value="1000" min="0">
                         </div>
                         <div class="input-group">
-                            <label for="monthly-investment">Monthly Investment (£)</label>
-                            <input type="number" id="monthly-investment" value="250" min="0">
+                            <label for="calc-monthly-investment">Monthly Investment (£)</label>
+                            <input type="number" id="calc-monthly-investment" value="250" min="0">
                         </div>
                         <div class="input-group">
-                            <label for="years">Years</label>
-                            <input type="number" id="years" value="3" min="1" max="50">
+                            <label for="calc-years">Years</label>
+                            <input type="number" id="calc-years" value="3" min="1" max="50">
                         </div>
                         <div class="input-group">
-                            <label for="return-rate">Expected Annual Return (%)</label>
-                            <input type="number" id="return-rate" value="8" min="0" max="30" step="0.5">
+                            <label for="calc-return-rate">Expected Annual Return (%)</label>
+                            <input type="number" id="calc-return-rate" value="8" min="0" max="30" step="0.5">
                         </div>
                     </div>
                     <div class="calculator-results">
@@ -575,23 +578,24 @@
         <div class="container">
             <div class="newsletter-card">
                 <div class="newsletter-content">
-                    <h2>📮 Join the Journey</h2>
-                    <p>Every month we share:</p>
-                    <ul class="newsletter-benefits">
-                        <li>✅ Portfolio updates (real numbers, no filter)</li>
-                        <li>✅ Lessons we learned (including mistakes)</li>
-                        <li>✅ Tips for UK teen investors</li>
-                    </ul>
-                    <p class="newsletter-promise">No spam. No sales pitches. Just a dad and daughter figuring it out.</p>
+                    <h2>📈 Follow Zo's Journey</h2>
+                    <p>Get updates when I post new investing lessons — real numbers, real mistakes, real wins.</p>
+                    <p class="newsletter-promise">No spam. No sales pitches. Just a 15-year-old figuring out the stock market.</p>
                 </div>
-                <form class="newsletter-form enhanced" action="#" method="POST">
+                <form class="newsletter-form enhanced" id="newsletter-form" action="https://formspree.io/f/meelqdny" method="POST">
+                    <div class="form-message" id="form-message"></div>
+                    
                     <div class="form-group">
-                        <input type="email" placeholder="your@email.com" required>
-                        <button type="submit" class="btn btn-primary btn-lg">Get Updates →</button>
+                        <input type="email" name="email" id="newsletter-email" placeholder="your@email.com" required>
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn">Get Updates →</button>
                     </div>
+                    
+                    <!-- Honeypot field (spam protection) -->
+                    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; opacity: 0;">
+                    
                     <div class="gdpr-consent">
                         <label class="checkbox-label">
-                            <input type="checkbox" required>
+                            <input type="checkbox" name="consent" required>
                             <span>I agree to receive monthly emails. I can unsubscribe anytime. <a href="resources/privacy.html">Privacy Policy</a></span>
                         </label>
                     </div>
@@ -666,6 +670,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>

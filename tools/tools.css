@@ -376,3 +376,171 @@
         font-size: 1.5rem;
     }
 }
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+    /* Hero */
+    .tools-hero {
+        padding: 2rem 0;
+    }
+    
+    .tools-hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .tools-hero .subtitle {
+        font-size: 1rem;
+    }
+    
+    .tools-hero .description {
+        font-size: 0.9rem;
+    }
+    
+    /* Calculators Section */
+    .calculators-section {
+        padding: 2rem 0;
+    }
+    
+    .calculator-card {
+        border-radius: 0.75rem;
+    }
+    
+    .calc-header {
+        padding: 1.25rem;
+    }
+    
+    .calc-icon {
+        font-size: 1.5rem;
+    }
+    
+    .calc-header h2 {
+        font-size: 1.125rem;
+    }
+    
+    .calc-header p {
+        font-size: 0.8rem;
+    }
+    
+    .calc-body {
+        padding: 1.5rem;
+    }
+    
+    /* Inputs - ensure 44px min height */
+    .calc-inputs {
+        gap: 0.75rem;
+    }
+    
+    .input-group label {
+        font-size: 0.8rem;
+    }
+    
+    .input-group input,
+    .input-group select {
+        padding: 0.75rem;
+        font-size: 1rem;
+        min-height: 44px;
+        border-radius: 0.4rem;
+    }
+    
+    .range-value {
+        font-size: 0.8rem;
+    }
+    
+    /* Results */
+    .calc-results {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .result-card {
+        padding: 0.75rem;
+    }
+    
+    .result-label {
+        font-size: 0.7rem;
+    }
+    
+    .result-value {
+        font-size: 1.25rem;
+    }
+    
+    /* Comparison */
+    .calc-comparison {
+        gap: 0.75rem;
+    }
+    
+    .compare-card {
+        padding: 1rem;
+    }
+    
+    .compare-card h3 {
+        font-size: 0.8rem;
+    }
+    
+    .compare-value {
+        font-size: 1.5rem;
+    }
+    
+    .compare-detail {
+        font-size: 0.75rem;
+    }
+    
+    /* Chart */
+    .calc-chart {
+        height: 150px;
+        padding: 0.75rem;
+    }
+    
+    .chart-bar {
+        width: 20px;
+    }
+    
+    .chart-bar span {
+        font-size: 0.6rem;
+    }
+    
+    /* Footer */
+    .calc-footer {
+        padding: 1rem;
+    }
+    
+    .calc-tip {
+        font-size: 0.8rem;
+    }
+    
+    /* SEO Content */
+    .seo-content {
+        padding: 2rem 0;
+    }
+    
+    .seo-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .seo-content h3 {
+        font-size: 1.25rem;
+        margin: 1.5rem 0 0.75rem;
+    }
+    
+    .seo-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    /* CTA */
+    .tools-cta {
+        padding: 2rem 0;
+    }
+    
+    .tools-cta h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .tools-cta p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+}

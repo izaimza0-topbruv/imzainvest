@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investing for Beginners UK Blog — Junior ISA & Finance Tips</title>
-    <meta name="description" content="Investing blog for UK teens & beginners: Junior ISA guides, compound interest explained, index funds vs ETFs, stock picking tips, and real portfolio updates.">
+    <title>Blog | IMZA INVEST - Learn Investing with Zo</title>
+    <meta name="description" content="Follow Zo's journey from £1,000 to £60,000. Learn about Junior ISAs, index funds, compound interest, and smart investing for UK teens.">
     <meta name="keywords" content="investing blog UK, teen investing, Junior ISA guide, index funds UK, compound interest, stock market for beginners">
     
     <!-- Open Graph -->
@@ -12,6 +12,12 @@
     <meta property="og:url" content="https://imzainvest.com/blog/">
     <meta property="og:title" content="Blog | IMZA INVEST">
     <meta property="og:description" content="Follow Zo's journey from £1,000 to £60,000. Learn smart investing for UK teens.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | IMZA INVEST">
+    <meta name="twitter:description" content="Follow Zo's journey from £1,000 to £60,000. Learn smart investing for UK teens.">
+    <meta name="twitter:image" content="https://imzainvest.com/images/og-image.png">
     
     <!-- Canonical -->
     <link rel="canonical" href="https://imzainvest.com/blog/">
@@ -29,6 +35,7 @@
             "name": "IMZA Invest"
         },
         "blogPost": [
+            {"@type": "BlogPosting", "headline": "My First Month of Investing: What I Learned (And What Scared Me)", "datePublished": "2026-02-12"},
             {"@type": "BlogPosting", "headline": "Why I'm Betting My Uni Fund on Underwater Robots", "datePublished": "2025-12-01"},
             {"@type": "BlogPosting", "headline": "Why Index Funds Are Actually OP", "datePublished": "2026-01-01"},
             {"@type": "BlogPosting", "headline": "How Much for UK University in 2028?", "datePublished": "2025-12-01"},
@@ -37,13 +44,15 @@
             {"@type": "BlogPosting", "headline": "Best Investment Apps for UK Teens 2026", "datePublished": "2026-02-11"},
             {"@type": "BlogPosting", "headline": "Junior ISA Guide 2026", "datePublished": "2026-02-11"},
             {"@type": "BlogPosting", "headline": "What is Compound Interest?", "datePublished": "2026-02-11"},
+            {"@type": "BlogPosting", "headline": "What Happens to Your Money When You Buy a Stock?", "datePublished": "2026-02-12"},
             {"@type": "BlogPosting", "headline": "Index Funds vs ETFs", "datePublished": "2026-02-11"}
         ]
     }
     </script>
     
     <link rel="stylesheet" href="../style.css">
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics (GA4) - UNCOMMENT WHEN PROPERTY ID IS SET -->
+    <!--
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -51,6 +60,7 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
+    -->
 </head>
 <body>
     <!-- Navigation -->
@@ -82,6 +92,31 @@
     <section class="blog-posts">
         <div class="container">
             
+            <!-- Newsletter Signup Component -->
+            <div class="blog-newsletter-cta" style="background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%); border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; color: white; text-align: center;">
+                <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">📈 Follow Zo's Journey</h2>
+                <p style="opacity: 0.9; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">Get updates when I post new investing lessons — real numbers, real mistakes, real wins.</p>
+                
+                <form id="blog-newsletter-form" action="https://formspree.io/f/meelqdny" method="POST" style="max-width: 400px; margin: 0 auto;">
+                    <div class="form-message" id="blog-form-message" style="display: none; padding: 0.75rem; margin-bottom: 0.75rem; border-radius: 0.5rem; font-size: 0.9rem; font-weight: 500; text-align: center; animation: slideIn 0.3s ease;"></div>
+                    
+                    <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+                        <input type="email" name="email" placeholder="your@email.com" required style="flex: 1; padding: 0.75rem; border-radius: 0.5rem; border: none; font-size: 0.95rem;">
+                        <button type="submit" style="background: #111827; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Subscribe</button>
+                    </div>
+                    
+                    <!-- Honeypot field -->
+                    <input type="text" name="website" style="position: absolute; left: -9999px; opacity: 0;">
+                    
+                    <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.75rem; opacity: 0.85; cursor: pointer;">
+                        <input type="checkbox" name="consent" required style="margin-top: 0.2rem; flex-shrink: 0;">
+                        <span>I agree to receive monthly emails. I can unsubscribe anytime. <a href="../resources/privacy.html" style="color: white; text-decoration: underline;">Privacy Policy</a></span>
+                    </label>
+                </form>
+                
+                <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 1rem;">🔒 Your email is safe. We never share it.</p>
+            </div>
+            
             <!-- Featured Post -->
             <article class="post-featured">
                 <div class="post-image">
@@ -101,6 +136,16 @@
             <!-- Post Grid -->
             <div class="posts-grid">
                 
+                <article class="post-card">
+                    <div class="post-header">
+                        <span class="post-category">📔 Personal</span>
+                        <span class="post-date">February 2026</span>
+                    </div>
+                    <h3><a href="my-first-month-investing-what-i-learned.html">My First Month of Investing: What I Learned (And What Scared Me)</a></h3>
+                    <p>Seeing red numbers for the first time, resisting panic, what Dad taught me about patience, and the real lesson nobody warns you about.</p>
+                    <span class="post-read">7 min read</span>
+                </article>
+
                 <article class="post-card">
                     <div class="post-header">
                         <span class="post-category">📚 Lesson 18</span>
@@ -196,6 +241,16 @@
                         <span class="post-category">💡 Basics</span>
                         <span class="post-date">February 2026</span>
                     </div>
+                    <h3><a href="what-happens-when-you-buy-a-stock.html">What Happens to Your Money When You Buy a Stock?</a></h3>
+                    <p>The mechanics of stock ownership. Where your money goes, how market makers work, and why prices move.</p>
+                    <span class="post-read">7 min read</span>
+                </article>
+
+                <article class="post-card">
+                    <div class="post-header">
+                        <span class="post-category">💡 Basics</span>
+                        <span class="post-date">February 2026</span>
+                    </div>
                     <h3><a href="index-funds-vs-etfs.html">Index Funds vs ETFs</a></h3>
                     <p>They're basically the same thing. Here's the tiny difference that doesn't matter much for beginners.</p>
                     <span class="post-read">6 min read</span>
@@ -251,6 +306,40 @@
         
         .blog-posts { padding: 4rem 0; }
         
+        .blog-newsletter-cta input[type="email"] {
+            color: #111827;
+        }
+        
+        .blog-newsletter-cta input[type="email"]::placeholder {
+            color: #9CA3AF;
+        }
+        
+        .blog-newsletter-cta button:hover {
+            opacity: 0.9;
+        }
+        
+        .blog-newsletter-cta button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.2);
+            color: white;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: white;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .post-featured { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; background: #F9FAFB; border-radius: 1rem; padding: 2rem; margin-bottom: 3rem; }
         .post-featured .post-image { background: linear-gradient(135deg, #10B981 0%, #3B82F6 100%); border-radius: 0.75rem; min-height: 200px; display: flex; align-items: center; justify-content: center; }
         .post-featured .post-category { background: rgba(255,255,255,0.2); color: white; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.875rem; }
@@ -284,7 +373,92 @@
             .blog-header h1 { font-size: 2rem; }
             .post-featured { grid-template-columns: 1fr; }
             .post-featured .post-image { min-height: 150px; }
+            .blog-newsletter-cta { padding: 1.5rem; }
+            .blog-newsletter-cta h2 { font-size: 1.25rem; }
         }
     </style>
+    
+    <script>
+        // Handle blog newsletter form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('blog-newsletter-form');
+            const messageDiv = document.getElementById('blog-form-message');
+            
+            if (!form) return;
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = form.querySelector('input[name="email"]').value;
+                const honeypot = form.querySelector('input[name="website"]').value;
+                const consent = form.querySelector('input[name="consent"]').checked;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                
+                // Validate honeypot
+                if (honeypot) {
+                    console.warn('Honeypot triggered');
+                    showMessage('Something went wrong. Please try again.', 'error');
+                    return;
+                }
+                
+                // Validate email
+                if (!email || !email.includes('@')) {
+                    showMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Validate consent
+                if (!consent) {
+                    showMessage('Please agree to receive emails.', 'error');
+                    return;
+                }
+                
+                submitBtn.disabled = true;
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        showMessage('✅ Success! Check your email for updates.', 'success');
+                        form.reset();
+                        submitBtn.textContent = originalText;
+                        
+                        setTimeout(() => {
+                            submitBtn.disabled = false;
+                        }, 5000);
+                    } else {
+                        showMessage('Oops! Something went wrong. Please try again.', 'error');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                } catch (error) {
+                    console.error('Form error:', error);
+                    showMessage('Network error. Please try again.', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+            
+            function showMessage(text, type) {
+                messageDiv.textContent = text;
+                messageDiv.style.display = 'block';
+                messageDiv.className = `form-message ${type}`;
+                
+                if (type === 'error') {
+                    setTimeout(() => {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

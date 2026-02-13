@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============ COMPOUND INTEREST CALCULATOR ============
 
 function setupCalculator() {
-    const inputs = ['starting-amount', 'monthly-investment', 'years', 'return-rate'];
+    const inputs = ['calc-starting-amount', 'calc-monthly-investment', 'calc-years', 'calc-return-rate'];
     inputs.forEach(id => {
         const el = document.getElementById(id);
         if (el) {
@@ -45,10 +45,10 @@ function calculateCompoundInterest(principal, monthlyPayment, years, annualRate)
 }
 
 function updateCalculator() {
-    const starting = parseFloat(document.getElementById('starting-amount')?.value) || 1000;
-    const monthly = parseFloat(document.getElementById('monthly-investment')?.value) || 250;
-    const years = parseFloat(document.getElementById('years')?.value) || 3;
-    const rate = parseFloat(document.getElementById('return-rate')?.value) || 8;
+    const starting = parseFloat(document.getElementById('calc-starting-amount')?.value) || 1000;
+    const monthly = parseFloat(document.getElementById('calc-monthly-investment')?.value) || 250;
+    const years = parseFloat(document.getElementById('calc-years')?.value) || 3;
+    const rate = parseFloat(document.getElementById('calc-return-rate')?.value) || 8;
     
     const result = calculateCompoundInterest(starting, monthly, years, rate);
     
@@ -139,18 +139,92 @@ function setupSmoothScroll() {
 
 // ============ NEWSLETTER FORM ============
 
-document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
-    e.preventDefault();
+function setupNewsletterForm() {
+    const form = document.getElementById('newsletter-form');
+    const messageDiv = document.getElementById('form-message');
+    const submitBtn = document.getElementById('submit-btn');
     
-    const email = this.querySelector('input[type="email"]').value;
-    const checkbox = this.querySelector('input[type="checkbox"]').checked;
+    if (!form) return;
     
-    if (!checkbox) {
-        alert('Please agree to receive emails');
-        return;
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const email = document.getElementById('newsletter-email').value;
+        const honeypot = form.querySelector('input[name="website"]').value;
+        const consent = form.querySelector('input[name="consent"]').checked;
+        
+        // Validate honeypot (should be empty)
+        if (honeypot) {
+            console.warn('Honeypot triggered');
+            showMessage('Something went wrong. Please try again.', 'error');
+            return;
+        }
+        
+        // Validate email
+        if (!email || !email.includes('@')) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Validate consent
+        if (!consent) {
+            showMessage('Please agree to receive emails.', 'error');
+            return;
+        }
+        
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        try {
+            // Submit to Formspree
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showMessage('✅ Success! Check your email for updates.', 'success');
+                form.reset();
+                submitBtn.textContent = 'Get Updates →';
+                
+                // Reset button after 5 seconds
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                }, 5000);
+            } else {
+                showMessage('Oops! Something went wrong. Please try again.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Updates →';
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showMessage('Network error. Please check your connection and try again.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Get Updates →';
+        }
+    });
+    
+    function showMessage(text, type) {
+        messageDiv.textContent = text;
+        messageDiv.className = `form-message ${type}`;
+        
+        // Auto-hide error messages after 5 seconds
+        if (type === 'error') {
+            setTimeout(() => {
+                messageDiv.className = 'form-message';
+            }, 5000);
+        }
     }
-    
-    // Placeholder - replace with actual email service
-    console.log('Newsletter signup:', email);
-    alert('Thanks for subscribing! (Note: Email capture not yet configured)');
-});
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupNewsletterForm);
+} else {
+    setupNewsletterForm();
+}
