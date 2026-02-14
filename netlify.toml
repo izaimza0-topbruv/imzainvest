@@ -1,0 +1,32 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/go/*"
+  to = "/go/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/about/*"
+  to = "/about/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/journey/*"
+  to = "/journey/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio/*"
+  to = "/portfolio/:splat.html"
+  status = 200
+
+[[redirects]]
+  from = "/resources/*"
+  to = "/resources/:splat.html"
+  status = 200
