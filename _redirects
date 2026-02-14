@@ -1,7 +1,0 @@
-# Clean URLs: /blog/post-name → /blog/post-name.html
-/blog/*  /blog/:splat.html  200
-/go/*    /go/:splat.html    200
-/about/* /about/:splat.html 200
-/journey/* /journey/:splat.html 200
-/portfolio/* /portfolio/:splat.html 200
-/resources/* /resources/:splat.html 200
