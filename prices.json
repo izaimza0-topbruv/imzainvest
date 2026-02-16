@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-13T18:01:14Z",
+  "updated": "2026-02-16T18:00:22Z",
   "fx": {
-    "GBPUSD": 1.365,
-    "GBPCAD": 1.8566
+    "GBPUSD": 1.3628,
+    "GBPCAD": 1.8582
   },
   "holdings": [
     {
@@ -11,12 +11,12 @@
       "exchange": "NASDAQ",
       "units": 34,
       "costGBP": 2476.38,
-      "priceRaw": 96.63,
+      "priceRaw": 98.01,
       "currency": "USD",
-      "priceGBP": 70.7912,
-      "valueGBP": 2406.9,
-      "plGBP": -69.48,
-      "plPct": -2.81
+      "priceGBP": 71.9181,
+      "valueGBP": 2445.22,
+      "plGBP": -31.16,
+      "plPct": -1.26
     },
     {
       "name": "Kraken Robotics Inc",
@@ -24,12 +24,12 @@
       "exchange": "TSX-V",
       "units": 549,
       "costGBP": 1997.94,
-      "priceRaw": 7.42,
+      "priceRaw": 7.39,
       "currency": "CAD",
-      "priceGBP": 3.9966,
-      "valueGBP": 2194.11,
-      "plGBP": 196.17,
-      "plPct": 9.82
+      "priceGBP": 3.977,
+      "valueGBP": 2183.35,
+      "plGBP": 185.41,
+      "plPct": 9.28
     },
     {
       "name": "KR1 plc",
@@ -37,18 +37,18 @@
       "exchange": "AQSE",
       "units": 4141,
       "costGBP": 1000.0,
-      "priceRaw": 17.5,
+      "priceRaw": 19.25,
       "currency": "GBp",
-      "priceGBP": 0.175,
-      "valueGBP": 724.67,
-      "plGBP": -275.33,
-      "plPct": -27.53
+      "priceGBP": 0.1925,
+      "valueGBP": 797.14,
+      "plGBP": -202.86,
+      "plPct": -20.29
     }
   ],
   "totals": {
     "invested": 5474.32,
-    "value": 5325.68,
-    "plGBP": -148.64,
-    "plPct": -2.72
+    "value": 5425.71,
+    "plGBP": -48.61,
+    "plPct": -0.89
   }
 }
