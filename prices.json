@@ -1,8 +1,8 @@
 {
-  "updated": "2026-02-16T18:00:22Z",
+  "updated": "2026-02-16T18:00:37Z",
   "fx": {
     "GBPUSD": 1.3628,
-    "GBPCAD": 1.8582
+    "GBPCAD": 1.8583
   },
   "holdings": [
     {
@@ -26,10 +26,10 @@
       "costGBP": 1997.94,
       "priceRaw": 7.39,
       "currency": "CAD",
-      "priceGBP": 3.977,
-      "valueGBP": 2183.35,
-      "plGBP": 185.41,
-      "plPct": 9.28
+      "priceGBP": 3.9768,
+      "valueGBP": 2183.24,
+      "plGBP": 185.3,
+      "plPct": 9.27
     },
     {
       "name": "KR1 plc",
@@ -47,8 +47,8 @@
   ],
   "totals": {
     "invested": 5474.32,
-    "value": 5425.71,
-    "plGBP": -48.61,
+    "value": 5425.6,
+    "plGBP": -48.72,
     "plPct": -0.89
   }
 }
