@@ -1,4 +1,22 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/resources/privacy",
+      "destination": "/resources/privacy.html"
+    },
+    {
+      "source": "/resources/terms",
+      "destination": "/resources/terms.html"
+    },
+    {
+      "source": "/resources/privacy/",
+      "destination": "/resources/privacy.html"
+    },
+    {
+      "source": "/resources/terms/",
+      "destination": "/resources/terms.html"
+    }
+  ]
 }

@@ -28,6 +28,18 @@
     
     <!-- Blog Posts -->
     <url>
+        <loc>https://imzainvest.com/blog/sp500-vs-ftse100-index-fund.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://imzainvest.com/blog/how-to-setup-junior-isa-parents-guide.html</loc>
+        <lastmod>2026-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://imzainvest.com/blog/best-investment-apps-uk-teens-2026.html</loc>
         <lastmod>2026-02-11</lastmod>
         <changefreq>monthly</changefreq>
