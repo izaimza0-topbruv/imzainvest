@@ -2137,3 +2137,22 @@ body {
     background: rgba(239, 68, 68, 0.15);
     color: #ef4444;
 }
+
+/* FCA Disclaimer Block */
+.fca-disclaimer {
+    background: #FFF3CD;
+    border: 1px solid #FFD43B;
+    border-left: 4px solid #F59E0B;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #664D03;
+}
+.fca-disclaimer p {
+    margin: 0;
+}
+.fca-disclaimer strong {
+    color: #92400E;
+}

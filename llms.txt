@@ -1,0 +1,32 @@
+# IMZAInvest
+
+> UK investing education for beginners. Covers ISAs, SIPPs, ETFs, index funds, dividend investing, and long-term wealth building — written with FCA-compliant educational framing. A dad-and-daughter investing journey for UK families.
+
+## About
+
+IMZAInvest is a personal finance education platform built around a UK family's real investing journey. It covers the fundamentals of investing for UK beginners — from opening a first Stocks and Shares ISA to building a diversified portfolio with low-cost index funds. All content is for educational purposes only and does not constitute personalised financial advice.
+
+## Topics Covered
+
+- Stocks and Shares ISA (how they work, best providers)
+- Junior ISA for children (JISA UK guide)
+- SIPP and pension basics for UK investors
+- Index funds and ETFs (Vanguard, iShares, HSBC)
+- Dividend investing strategy
+- Compound interest and long-term wealth building
+- UK tax-efficient investing (ISA allowances, CGT)
+- Investing platforms comparison (Vanguard UK, Freetrade, Trading 212, InvestEngine)
+- Family investing and teaching kids about money
+
+## Disclaimer
+
+All content is educational only. Not financial advice. Past performance is not a guide to future returns. Investing involves risk.
+
+## Links
+
+- [Homepage](https://imzainvest.com)
+- [Blog – Investing Guides](https://imzainvest.com/blog/)
+- [ISA Guides](https://imzainvest.com/resources/)
+- [Our Journey](https://imzainvest.com/journey/)
+- [Investment Portfolio](https://imzainvest.com/portfolio/)
+- [Tools](https://imzainvest.com/tools/)
